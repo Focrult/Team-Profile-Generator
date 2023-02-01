@@ -1,7 +1,13 @@
 const inquirer = require('inquirer');
-const generatedHTML = require('./src/generatedHTML.js');
-const TeamArrayInfo = require('./src/generatedHTML');  //file used to apply teamArray to the html
+const fs = require('fs');
+const generatedHTML = require('./src/generatedHTML');
+// const TeamArrayInfo = require('./src/generatedHTML');  //file used to apply teamArray to the html
 //TEAM MANAGER
+
+const Manager = require('./lib/Manager');
+const Engineer = require('./lib/Engineer');
+const Intern = require('./lib/Intern');
+
 
 const TeamManager = [ //should initiate first!
     inquirer.prompt([
@@ -26,9 +32,9 @@ const TeamManager = [ //should initiate first!
         message: 'Enter your office number',
         },
     ]).then(Info => {
-        const managerInfo = new Manager(Info.name, Info.id, Info.email, Info.officeNumber);
+        const managerInfo = new Manager(Info.name, Info.id, Info.email, Info.OfficeNumber);
         this.TeamArrayInfo.push(managerInfo);
-        this.roles();
+      //do I need this to specify what role exactly? 
     })
 ]
 
@@ -73,8 +79,6 @@ const roles = [
     //create a return for prompts?
             })
         }
-        //write to html?
-
         else if(selected === "Engineer"){
              //prompt for the user to select
              inquirer.prompt([
@@ -105,7 +109,8 @@ const roles = [
             })
         }
         else if(selected === "Done!"){
-            generatedHTML(teamArray); //pass the array to the html generator
+        const completed = generatedHTML(teamArray); //pass the array to the html generator
+            fs.writeFile('./dist/index.html', completed, 'utf8');
         }
     })
 ]
