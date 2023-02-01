@@ -1,14 +1,8 @@
-//use tailwind
-
-//card
-//title manager name
-//manager id
-//manager email
-// manager office number
+const manager = require('./lib/Manager.js');
+const enginner = require('./lib/Enginner.js');
+const intern = require('./lib/Intern.js');
 
 const managerInfo = () => {`
-
-
 <div class="grid">
     <div class="card drop-shadow-xl w-48 bg-gray-300 h-56 rounded-sm">
         <div class="card-body bg-blue-600 h-1/4">
@@ -22,10 +16,7 @@ const managerInfo = () => {`
         </div>
     </div>
 </div>`
-
 }
-
-
 const engineerInfo = () => {`
 <div class="grid">
     <div class="card drop-shadow-xl w-48 bg-gray-300 h-56 rounded-sm">
@@ -39,10 +30,8 @@ const engineerInfo = () => {`
             <div class="border-slate-600 border bg-white">Github: ${engineer.github}</div>
         </div>
     </div>
-</div>
-`}
-
-
+</div>`
+}
 const internInfo = () => {`
 <div class="grid">
     <div class="card drop-shadow-xl w-48 bg-gray-300 h-56 rounded-sm">

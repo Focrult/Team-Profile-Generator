@@ -1,7 +1,8 @@
 const inquirer = require('inquirer');
-
+const generatedHTML = require('./src/generatedHTML.js');
 const TeamArrayInfo = require('./src/generatedHTML');  //file used to apply teamArray to the html
 //TEAM MANAGER
+
 const TeamManager = [ //should initiate first!
     inquirer.prompt([
         {
@@ -24,8 +25,8 @@ const TeamManager = [ //should initiate first!
         name: 'officeNumber',
         message: 'Enter your office number',
         },
-    ]).then(pushInfo => {
-        const managerInfo = new Manager();
+    ]).then(Info => {
+        const managerInfo = new Manager(Info.name, Info.id, Info.email, Info.officeNumber);
         this.TeamArrayInfo.push(managerInfo);
         this.roles();
     })
@@ -33,8 +34,7 @@ const TeamManager = [ //should initiate first!
 
 //activating prompts for the user to select - roles
 const roles = [
-    inquirer
-    .prompt([
+    inquirer.prompt([
         {
             type: 'list',
             message: 'What role would you like to select?',
@@ -43,7 +43,7 @@ const roles = [
         }
     ]).then(({roles}) => {
         const selected = {roles};
-        if(roles === "Intern"){
+        if(selected === "Intern"){
             //prompt for the user to select
             inquirer.prompt([
                 {
@@ -61,15 +61,21 @@ const roles = [
                     name: 'email',
                     message: 'Enter the email of your intern: ',
                 },
-            ]).then(pushInfo => {
-                const internInfo = new Intern();
+                {
+                    type: 'input',
+                    name: 'school',
+                    message: 'What school is your intern from?: ',
+                },
+            ]).then(Info => {
+                const internInfo = new Intern(Info.name, Info.id, Info.email, Info.school);
                 this.TeamArrayInfo.push(internInfo);//push into an array?
-    
+                return inquirer.prompt(roles);
+    //create a return for prompts?
             })
         }
         //write to html?
 
-        else if(roles === "Engineer"){
+        else if(selected === "Engineer"){
              //prompt for the user to select
              inquirer.prompt([
                 {
@@ -87,13 +93,18 @@ const roles = [
                     name: 'email',
                     message: 'Enter the email of your engineer: ',
                 },
-            ]).then(pushInfo => { //push into an array?
-                const engineerInfo = new Engineer();
+                {
+                    type: 'input',
+                    name: 'github',
+                    message: 'Enter the github for your engineer: ',
+                },
+            ]).then(Info => { //push into an array?
+                const engineerInfo = new Engineer(Info.name, Info.email, Info.github, info.id);
                 this.TeamArrayInfo.push(engineerInfo);
-    
+                return inquirer.prompt(roles);
             })
         }
-        else if(roles === "Done!"){
+        else if(selected === "Done!"){
             generatedHTML(teamArray); //pass the array to the html generator
         }
     })
