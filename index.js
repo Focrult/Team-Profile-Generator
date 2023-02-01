@@ -113,12 +113,15 @@ const rolesprompt = [
             ]).then((info) => { //push into an array?
                 const engineerInfo = new Engineer(info.name, info.email, info.github, info.id);
                 TeamArrayInfo.push(engineerInfo); 
-                return inquirer.prompt(rolesprompt);
+                reviewAnswer();
             })
         }
         else{
-        const completed = generatedHTML(teamArray); //pass the array to the html generator
-            fs.writeFile('./dist/index.html', completed, 'utf8');
+        const completed = generatedHTML(TeamArrayInfo); //pass the array to the html generator
+            fs.writeFile('./dist/index.html', completed, err => {
+                if(err) throw err;
+                console.log('logged!')
+            });
         }
     })
 ]
