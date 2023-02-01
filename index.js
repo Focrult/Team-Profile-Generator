@@ -7,8 +7,10 @@ const generatedHTML = require('./src/generatedHTML');
 const Manager = require('./lib/Manager');
 const Engineer = require('./lib/Engineer');
 const Intern = require('./lib/Intern');
+const TeamArrayInfo = []; //reference to previous lesson
+FirstManager();
 
-
+function FirstManager() {
 const TeamManager = [ //should initiate first!
     inquirer.prompt([
         {
@@ -33,11 +35,13 @@ const TeamManager = [ //should initiate first!
         },
     ]).then(Info => {
         const managerInfo = new Manager(Info.name, Info.id, Info.email, Info.OfficeNumber);
-        this.TeamArrayInfo.push(managerInfo);
-      //do I need this to specify what role exactly? 
+        TeamArrayInfo.push(managerInfo); //removed this. <- didn't work
+        roles(); //activate roles function
+     
     })
 ]
-
+}
+function roles() {
 //activating prompts for the user to select - roles
 const roles = [
     inquirer.prompt([
@@ -48,8 +52,8 @@ const roles = [
             name: 'roles'
         }
     ]).then(({roles}) => {
-        const selected = {roles};
-        if(selected === "Intern"){
+        // const selected = {roles};
+        if(roles === "Intern"){
             //prompt for the user to select
             inquirer.prompt([
                 {
@@ -74,12 +78,12 @@ const roles = [
                 },
             ]).then(Info => {
                 const internInfo = new Intern(Info.name, Info.id, Info.email, Info.school);
-                this.TeamArrayInfo.push(internInfo);//push into an array?
+                TeamArrayInfo.push(internInfo);//push into an array?
                 return inquirer.prompt(roles);
     //create a return for prompts?
             })
         }
-        else if(selected === "Engineer"){
+        else if(roles === "Engineer"){
              //prompt for the user to select
              inquirer.prompt([
                 {
@@ -104,13 +108,14 @@ const roles = [
                 },
             ]).then(Info => { //push into an array?
                 const engineerInfo = new Engineer(Info.name, Info.email, Info.github, info.id);
-                this.TeamArrayInfo.push(engineerInfo);
+                TeamArrayInfo.push(engineerInfo); 
                 return inquirer.prompt(roles);
             })
         }
-        else if(selected === "Done!"){
+        else{
         const completed = generatedHTML(teamArray); //pass the array to the html generator
             fs.writeFile('./dist/index.html', completed, 'utf8');
         }
     })
 ]
+}
