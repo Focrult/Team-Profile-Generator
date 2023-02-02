@@ -3,7 +3,7 @@
 
 # Project Description
 ### What is this project?
-For this weeks project I am tasked to develop a functional HTML Team generator! This is to be used by a manager who wants to develop a visually appealing team card generator! Taking advantage of recent OOP classes and TDD files I have developed a generator where a manager develops there card as well as other team members. This application will display a series of questions for the user to answer inside their console/terminal. After the manager is happy with their input they can select "Done!" in the terminal and a populated index.html file will be generated inside the dist folder. 
+For this weeks project I am tasked to develop a functional HTML Team generator! This is to be used by a manager who wants to develop a visually appealing team card generator! Taking advantage of my Node.js knowledge, recent OOP classes and TDD files I have developed a generator where a manager develops a webpage that displays their teams basic information. This application will display a series of questions for the user to answer inside their console/terminal. After the manager is happy with their input they can select "Done!" in the terminal and a populated index.html file will be generated inside the dist folder. 
 
 ### Files modified
 For this project I been required to create an abundant amount of files for this project to be successful. Involving the following:
@@ -26,7 +26,7 @@ This application will require the user to install several applications in order 
 7. OPTIONAL: To run this applications test files, run the following command -> npm run test
 
 # Usage
-As stated, the usage for this project is to enable any manager to create a professional Team Profile! 
+The usage for this project is to enable any manager to create a professional Team Profile webpage! Enabling the manager quick access to their team members emails and Github profiles!
 
 # Walk Through Video
 This Video demostrates what the user would see and how to answer the following questions. 
