@@ -17,11 +17,11 @@ For this project I had faced numerous challenges. A major hurdle that I ensured 
 # Installation
 This application will require the user to install several applications in order to run the project properly:
 
-1. The user will need to download Node.js from their terminal
+1. The user will need to install Node.js from their terminal!
 2. After the user has performed their npm init and npm install, you will need to install inquirer and tailwindcss
-3. To install inuirer perform the following command -> npm install inuirer
+3. To install inuirer perform the following command -> npm install inquirer
 4. To install tailwindcss please refer to the following documentation -> https://tailwindcss.com/docs/installation
-5. To run this application the user will run the command node index.js in their terminal to successfully launch the Team Profile Generator.
+5. To run this application the user will run the command "node index.js" in their terminal to successfully run the Team Profile Generator.
 6. Afterwhich the application will start and the user will answer the appropriate prompts!
 7. OPTIONAL: To run this applications test files, run the following command -> npm run test
 
