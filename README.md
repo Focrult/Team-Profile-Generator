@@ -6,7 +6,7 @@
 For this weeks project I am tasked to develop a functional HTML Team generator! This is to be used by a manager who wants to develop a visually appealing team card generator! Taking advantage of my Node.js knowledge, recent OOP classes and TDD files I have developed a generator where a manager develops a webpage that displays their teams basic information. This application will display a series of questions for the user to answer inside their console/terminal. After the manager is happy with their input they can select "Done!" in the terminal and a populated index.html file will be generated inside the dist folder. 
 
 ### Files modified
-For this project I been required to create an abundant amount of files for this project to be successful. Involving the following:
+For this project I been required to create an abundant amount of files for this project to be successful. Including:
 ![filestructure](https://user-images.githubusercontent.com/114898970/216245831-4a7bea4c-9860-4ab8-a1d0-4ebfb31f2b4b.png)
 
 
