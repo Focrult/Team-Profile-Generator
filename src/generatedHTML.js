@@ -1,9 +1,9 @@
-const manager = require('../lib/Manager');
-const engineer = require('../lib/Engineer');
-const intern = require('../lib/Intern');
+const Manager = require('../lib/Manager');
+const Engineer = require('../lib/Engineer');
+const Intern = require('../lib/Intern');
 
 
-    const managerInfo = (manager) => { //make sure manager is an array
+    const managerInfo = (manager) => { //HTML for the Manager
         return`
         <div class="grid mb-10">
             <div class="card drop-shadow-xl w-52 bg-gray-300 h-60 rounded-sm mb-4">
@@ -21,7 +21,7 @@ const intern = require('../lib/Intern');
         `;
     }
 
-    const engineerInfo =(engineer) => {
+    const engineerInfo =(engineer) => {//HTML for the Engineer
          return`
         <div class="grid mb-10">
             <div class="card drop-shadow-xl w-52 bg-gray-300 h-60 rounded-sm mb-">
@@ -39,7 +39,7 @@ const intern = require('../lib/Intern');
         `;
     }
 
-const internInfo = (intern) => {
+const internInfo = (intern) => { //HTML for the intern
     return`
     <div class="grid mb-10">
         <div class="card drop-shadow-xl w-52 bg-gray-300 h-60 rounded-sm mb-4">
@@ -57,9 +57,9 @@ const internInfo = (intern) => {
 }
  //end of completed team
 
-//html basic layout ready for completed team input
+//HTMLsetup and ready to be populated with team members
 const HTMLsetup = (data) => 
-    `
+`
 <!doctype html>
 <html>
 <head>
@@ -77,25 +77,26 @@ const HTMLsetup = (data) =>
 `;
 
 //I HAVE TO RENDER!
-const MyTeamGenerator = teamArray => {
-    const sampleArray = [];
-    teamArray.forEach(teamMember => {
+const MyTeamGenerator = teamArray => { 
+    const sampleArray = []; //Empty array
+    teamArray.forEach(teamMember => { //Loop through the array of each team members
         switch(teamMember.getRole()){
-            case 'Manager':
-            sampleArray.push(managerInfo(new manager(teamMember.name, teamMember.id, teamMember.email, teamMember.officeNumber)))
+            //call each function to get information about team members and push result to the empty array
+            case 'Manager':  
+            sampleArray.push(managerInfo(new Manager(teamMember.name, teamMember.id, teamMember.email, teamMember.officeNumber)))
             break;
             case 'Engineer':
-            sampleArray.push(engineerInfo(new engineer(teamMember.name, teamMember.id, teamMember.email, teamMember.github)))
+            sampleArray.push(engineerInfo(new Engineer(teamMember.name, teamMember.id, teamMember.email, teamMember.github)))
             break;
             case 'Intern':
-            sampleArray.push(internInfo(new intern(teamMember.name, teamMember.id, teamMember.email, teamMember.school)));
+            sampleArray.push(internInfo(new Intern(teamMember.name, teamMember.id, teamMember.email, teamMember.school)));
             break;
             default:
             break;
         }
     })
     console.log(sampleArray)
-    return sampleArray.join('');
+    return sampleArray.join(''); //join all the elements within the array into a single string
 }
 
 module.exports = HTMLsetup;

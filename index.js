@@ -78,10 +78,8 @@ const rolesprompt = [
                 },
             ]).then((info) => {
                 const internInfo = new Intern(info.name, info.id, info.email, info.school);
-                TeamArrayInfo.push(internInfo);//push into an array?
+                TeamArrayInfo.push(internInfo);//push into an array
                 reviewAnswer();
-                //return inquirer.prompt(rolesprompt);
-    //create a return for prompts?
             })
         }
         else if(roles === "Engineer"){
@@ -107,7 +105,7 @@ const rolesprompt = [
                     name: 'github',
                     message: 'Enter the github for your engineer: ',
                 },
-            ]).then((info) => { //push into an array?
+            ]).then((info) => { //push into an array
                 const engineerInfo = new Engineer(info.name, info.email, info.github, info.id);
                 TeamArrayInfo.push(engineerInfo); 
                 reviewAnswer();
