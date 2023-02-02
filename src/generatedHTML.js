@@ -82,7 +82,7 @@ const MyTeamGenerator = teamArray => {
     teamArray.forEach(teamMember => {
         switch(teamMember.getRole()){
             case 'Manager':
-            sampleArray.push(managerInfo(new manager(teamMember.name, teamMember.id, teamMember.email, teamMember.OfficeNumber)))
+            sampleArray.push(managerInfo(new manager(teamMember.name, teamMember.id, teamMember.email, teamMember.officeNumber)))
             break;
             case 'Engineer':
             sampleArray.push(engineerInfo(new engineer(teamMember.name, teamMember.id, teamMember.email, teamMember.github)))
