@@ -11,13 +11,22 @@ For this project I been required to create an abundant amount of files for this 
 
 
 ### Challenges
+For this project I had faced numerous challenges. A major hurdle that I ensured was the rendering of the cards. This took a significant amount of my time where I struggled to pass the information and have that information displayed properly for the generateHTML.js file. Originally it would only paste the object text itself filled with divs and functions. After lots of trial and error, constant syntax changes and restructuring, I managed to fix the application for rendering the cards. Next challenge was understanding how to tackle jest, the test.js files. I avoided this for last because I didn't know how to tackle it originally. This was an area that I wasn't knowledgable on, however, in the end I managed to develop simple test situations. Additionally throughout the making of this application, I saw several syntax errors, this is definitely an area that I will need to consistently practice on!
 
 
 # Installation
+This application will require the user to install several applications in order to run the project properly:
 
+1. The user will need to download Node.js from their terminal
+2. After the user has performed their npm init and npm install, you will need to install inquirer and tailwindcss
+3. To install inuirer perform the following command -> npm install inuirer
+4. To install tailwindcss please refer to the following documentation -> https://tailwindcss.com/docs/installation
+5. To run this application the user will run the command node index.js in their terminal to successfully launch the Team Profile Generator.
+6. Afterwhich the application will start and the user will answer the appropriate prompts!
+7. OPTIONAL: To run this applications test files, run the following command -> npm run test
 
 # Usage
-
+As stated, the usage for this project is to enable any manager to create a professional Team Profile! 
 
 # Walk Through Video
 This Video demostrates what the user would see and how to answer the following questions. 
