@@ -7,28 +7,8 @@ For this weeks project I am tasked to develop a functional HTML Team generator! 
 
 ### Files modified
 For this project I been required to create an abundant amount of files for this project to be successful. Involving the following:
+![filestructure](https://user-images.githubusercontent.com/114898970/216245831-4a7bea4c-9860-4ab8-a1d0-4ebfb31f2b4b.png)
 
-├── dist/                  // rendered output (HTML) and CSS style sheet      
-├── lib/                   // classes
-│   ├── Employee.js
-│   ├── Engineer.js
-│   ├── Intern.js
-│   └── Manager.js
-├── src/                   // template helper code 
-    ├── generatedHTML.js
-    └── input.css
-├── tests/           //jest tests
-│   ├── Employee.test.js
-│   ├── Engineer.test.js
-│   ├── Intern.test.js
-│   └── Manager.test.js
-├── .gitignore             // indicates which folders and files Git should ignore
-├── index.js               // runs the application
-├── LICENSE
-├── package-lock.json
-├── package.json 
-├── sample.html
-└── tailwind.config.js
 
 ### Challenges
 
