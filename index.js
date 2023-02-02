@@ -4,7 +4,7 @@ const HTMLFinal = require('./src/generatedHTML');
 const Manager = require('./lib/Manager');
 const Engineer = require('./lib/Engineer');
 const Intern = require('./lib/Intern');
-const TeamArrayInfo = []; //reference to previous lesson
+const TeamArrayInfo = []; 
 FirstManager();
 
 function FirstManager() {
@@ -32,7 +32,7 @@ const TeamManager = [ //should initiate first!
         },
     ]).then((info) => {
         const managerInfo = new Manager(info.name, info.id, info.email, info.OfficeNumber);
-        TeamArrayInfo.push(managerInfo); //removed this. <- didn't work
+        TeamArrayInfo.push(managerInfo); 
         roles(); //activate roles function
      
     })
@@ -114,7 +114,7 @@ const rolesprompt = [
         else{
         const completed = HTMLFinal(TeamArrayInfo); //pass the array to the html generator
         console.log(TeamArrayInfo)
-            fs.writeFile('./dist/index.html', completed, err => {
+            fs.writeFile('./dist/index.html', completed, err => { //write the file
                 if(err) throw err;
                 console.log('logged!')
             });
