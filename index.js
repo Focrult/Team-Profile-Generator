@@ -1,9 +1,6 @@
 const inquirer = require('inquirer');
 const fs = require('fs');
-const generatedHTML = require('./src/generatedHTML');
-// const TeamArrayInfo = require('./src/generatedHTML');  //file used to apply teamArray to the html
-//TEAM MANAGER
-
+const HTMLFinal = require('./src/generatedHTML');
 const Manager = require('./lib/Manager');
 const Engineer = require('./lib/Engineer');
 const Intern = require('./lib/Intern');
@@ -30,7 +27,7 @@ const TeamManager = [ //should initiate first!
         },
         {
         type: 'number',
-        name: 'officeNumber',
+        name: 'OfficeNumber',
         message: 'Enter your office number',
         },
     ]).then((info) => {
@@ -117,7 +114,8 @@ const rolesprompt = [
             })
         }
         else{
-        const completed = generatedHTML(TeamArrayInfo); //pass the array to the html generator
+        const completed = HTMLFinal(TeamArrayInfo); //pass the array to the html generator
+        console.log(TeamArrayInfo)
             fs.writeFile('./dist/index.html', completed, err => {
                 if(err) throw err;
                 console.log('logged!')
