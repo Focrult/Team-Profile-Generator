@@ -106,7 +106,7 @@ const rolesprompt = [
                     message: 'Enter the github for your engineer: ',
                 },
             ]).then((info) => { //push into an array
-                const engineerInfo = new Engineer(info.name, info.email, info.github, info.id);
+                const engineerInfo = new Engineer(info.name, info.id, info.email, info.github);
                 TeamArrayInfo.push(engineerInfo); 
                 reviewAnswer();
             })

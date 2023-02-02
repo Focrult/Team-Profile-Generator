@@ -13,7 +13,7 @@ const Intern = require('../lib/Intern');
                 </div>
                 <div class="pt-10 place-items-center pl-3 pr-3 col-cols-1 ">
                     <div class="border-slate-600 border border-solid bg-white">ID: ${manager.id}</div>
-                    <div class="border-slate-600 border bg-white">Email: ${manager.email}</div>
+                    <div class="border-slate-600 border bg-white">Email: <a href="${manager.email}" class="text-blue-600 dark:text-blue-500 underline">${manager.email}</a></div>
                     <div class="border-slate-600 border bg-white">Office number: ${manager.officeNumber}</div>
                 </div>
             </div>
@@ -31,8 +31,8 @@ const Intern = require('../lib/Intern');
                 </div>
                 <div class="pt-10 place-items-center pl-3 pr-3 col-cols-1 ">
                     <div class="border-slate-600 border border-solid bg-white">ID: ${engineer.id}</div>
-                    <div class="border-slate-600 border bg-white">Email: ${engineer.email}</div>
-                    <div class="border-slate-600 border bg-white">Github: ${engineer.github}</div>
+                    <div class="border-slate-600 border bg-white">Email: <a href="${engineer.email}" class="text-blue-600 dark:text-blue-500 underline">${engineer.email}</a></div>
+                    <div class="border-slate-600 border bg-white ">Github: <a href="https://github.com/${engineer.github}" class="text-blue-600 dark:text-blue-500 underline"> ${engineer.github} </a></div>
                 </div>
             </div>
         </div>
@@ -49,7 +49,7 @@ const internInfo = (intern) => { //HTML for the intern
         </div>
             <div class="pt-10 place-items-center pl-3 pr-3 col-cols-1 ">
                 <div class="border-slate-600 border border-solid bg-white">ID: ${intern.id}</div>
-                <div class="border-slate-600 border bg-white">Email: ${intern.email}</div>
+                <div class="border-slate-600 border bg-white">Email: <a href="${intern.email}" class="text-blue-600 dark:text-blue-500 underline">${intern.email}</a></div>
                 <div class="border-slate-600 border bg-white">School: ${intern.school}</div>
             </div>
         </div>
