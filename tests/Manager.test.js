@@ -2,10 +2,10 @@ const Manager = require('../lib/Manager');
 
 describe('Manager', () => {
     it('should pass data through', () => {
-        const OfficeNumber = "1"
+        const officeNumber = "1"
                                 //other variables
-        const obj = new Manager("", 0, "", OfficeNumber);
-        expect(obj.OfficeNumber).toEqual("1");
+        const obj = new Manager("", 0, "", officeNumber);
+        expect(obj.officeNumber).toEqual("1");
     })
     it('should get role Manager', () => {
         const role = "Manager";
